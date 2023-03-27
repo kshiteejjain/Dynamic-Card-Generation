@@ -1,0 +1,179 @@
+@import './app/utils/variable.scss';
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $textColor;
+}
+
+p {
+  display: block;
+  margin-bottom: 40px;
+  color: #dcdcdc;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #282828;
+  margin-bottom: 5rem;
+
+  h1 {
+    color: #a3dff5;
+    margin-left: 1rem;
+  }
+
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  background-color: $white;
+  max-width: 600px;
+  min-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 10px;
+
+  .formInput {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: $textColor;
+    font-size: 0.9rem;
+  }
+
+  .formInput:focus {
+    outline: 0;
+    border-color: #8c8c8c;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 1rem;
+    color: #363636;
+  }
+
+  .buttonPrimary {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.formControl {
+  margin-bottom: 1rem;
+}
+
+.buttonPrimary {
+  padding: 1rem 2rem;
+  color: $white;
+  background-color: $primary-color;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+
+  &:hover {
+    background-color: $primary-color-hover;
+  }
+}
+
+.align-center {
+  text-align: center;
+}
+
+.error {
+  color: #c60606;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.asterisk {
+  font-size: 1.5rem;
+  color: #c60606;
+}
+
+@media(max-width:767px) {
+  .form {
+    max-width: 73%;
+    min-width: auto;
+  }
+
+  header {
+    margin-bottom: 3rem;
+  }
+
+  .imageWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .imageContainer {
+    width: 40%;
+    margin: 0 0 1rem 0 !important;
+    padding: 2% !important;
+
+    .profilePic {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+
+
+  h2 {
+    margin: 1rem;
+  }
+
+  .emptyStateProfile {
+    padding: 1rem;
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .acceptButton {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .rejectButton {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .cardParent {
+    width: 100%;
+  }
+
+  .cardImage {
+    text-align: center;
+    height: 7rem;
+  }
+}

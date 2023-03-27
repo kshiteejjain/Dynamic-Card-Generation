@@ -1,57 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { Routes, Route, BrowserRouter} from "react-router-dom";
+import './App.scss';
+import Form from './features/Form/Form';
+import UserCard from './features/UserCard/UserCard';
+import ProfilePic from './features/ProfilePic/ProfilePic';
+import logo from './assets/logo.svg';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+        <header>
+        <img data-testid='renderLogo' src={logo} alt="Logo" width='55' />
+          <h1 data-testid='renderTitle'>Image Finder</h1>
+        </header>
+
+        <div className="container">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Form />} />
+              <Route path="*" element={<Form />} />
+              <Route path="UserCard" element={<UserCard />} />
+              <Route path="ProfilePic" element={<ProfilePic />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+    </>
   );
 }
 

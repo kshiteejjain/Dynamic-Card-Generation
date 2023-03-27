@@ -1,0 +1,61 @@
+@import '../../app/utils/variable.scss';
+
+h1 {
+    text-align: center;
+    color: $white;
+}
+
+.cardWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardParent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 21rem;
+    position: relative;
+    margin: 1rem;
+    border-radius: 0.8rem;
+    padding-bottom: 3rem;
+
+    &:before {
+        background-image: url(../../assets/bg.jpeg);
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 10rem;
+        background-repeat: no-repeat;
+        border-radius: 0.8rem 0.8rem 0 0;
+    };
+
+    label {
+        text-align: left;
+        width: 100%;
+        padding: 0.5rem 2rem;
+        box-sizing: border-box;
+        font-weight: 500;
+    };
+    
+    span {
+        color: $black;
+        font-weight: 300;
+    }
+}
+
+.cardImage {
+    position: relative;
+    margin: 4rem 0 2rem 0;
+    width: 9rem;
+    height: 9rem;
+}

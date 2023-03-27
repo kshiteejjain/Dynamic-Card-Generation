@@ -1,0 +1,143 @@
+@import '../../app/utils/variable.scss';
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.imageContainer {
+  display: inline-block;
+  text-align: center;
+  margin: 0 1rem 1rem 1rem;
+  background-color: $white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 5px solid $white;
+  position: relative;
+
+  &:hover {
+    background-color: #a3dff5;
+  }
+}
+
+
+.profilePic {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    transform: rotate(50deg);
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+
+h2 {
+  color: $white;
+}
+
+.acceptButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  color: $white;
+  background-color: $primary-color;
+  font-size: 0.8rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    background-color: $primary-color-hover;
+  }
+}
+
+
+.rejectButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  color: $white;
+  background-color: $textColor;
+  font-size: 0.8rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  margin-left: 4px;
+
+  &:hover {
+    background-color: #414141;
+  }
+}
+
+
+.emptyStateProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageContainer {
+  .checkmark {
+    position: absolute;
+    width: 24px;
+    right: 5px;
+    top: 5px;
+    display: none;
+  }
+
+  &.active {
+    border: 5px solid #28a745;
+
+    .checkmark {
+      display: block;
+    }
+  }
+
+}
+
+
+.imageCount {
+  font-size: 15px;
+  font-weight: normal;
+  color: $white;
+  background-color: $primary-color;
+  padding: 7px 11px;
+  border-radius: 6px;
+}
+
+.flexHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imageWrapper {
+  background-color: #2d2d2d;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+@media (max-width:767px) {
+  .flexHeading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imageCount {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
