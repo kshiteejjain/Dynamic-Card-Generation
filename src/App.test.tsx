@@ -6,6 +6,7 @@ import { createMemoryHistory } from "history";
 import Form from './features/Form/Form';
 import UserCard from './features/UserCard/UserCard';
 import ProfilePic from './features/ProfilePic/ProfilePic';
+import { MemoryRouter } from 'react-router-dom';
 
 const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
@@ -33,7 +34,7 @@ it('Render Header Logo and Title', () => {
 });
 
 it("Redirects to Form Page", () => {
-  renderWithProviders(<Form />);
+  renderWithProviders(<App />);
 
   expect(history.location.pathname).toBe("/");
 });
@@ -60,6 +61,13 @@ it('Renders Profile component', async () => {
   const form = screen.getAllByTestId('profilePic');
   await(() => expect(form).toBeInTheDocument());
   await(() => expect(history.location.pathname).toBe("/ProfilePic"))
+});
+
+it('Renders UserCard Route component', async () => {
+  renderWithProviders(<MemoryRouter initialEntries={["/UserCard"]}> <App /> </MemoryRouter>);
+
+  const form = screen.getAllByTestId('cardWrapper');
+  await(() => expect(form).toBeInTheDocument());
 });
 
 });

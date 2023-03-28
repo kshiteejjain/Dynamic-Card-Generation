@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import './App.scss';
 import Form from './features/Form/Form';
 import UserCard from './features/UserCard/UserCard';
@@ -15,14 +15,12 @@ const App = () => {
         </header>
 
         <div className="container">
-          <BrowserRouter>
             <Routes>
               <Route path="/" element={<Form />} />
               <Route path="*" element={<Form />} />
               <Route path="UserCard" element={<UserCard />} />
               <Route path="ProfilePic" element={<ProfilePic />} />
             </Routes>
-          </BrowserRouter>
         </div>
     </>
   );

@@ -5,6 +5,7 @@ import { setupStore } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -12,7 +13,12 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={setupStore()}>
-      <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={ <App /> }>
+        </Route>
+      </Routes>
+    </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

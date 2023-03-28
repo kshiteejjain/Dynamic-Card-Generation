@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../app/store';
 import { getImages, selectedImage, removeImage } from './ProfilePicSlice';
 import { useNavigate } from "react-router-dom";
-import Checkmark from '../../assets/checkmark.svg';
+// import Checkmark from '../../assets/checkmark.svg';
 
 import './ProfilePic.scss';
 
@@ -60,7 +60,7 @@ const ProfilePic = () => {
                         {images?.map((img: string, i: number) => {
                             return (
                                 <div className={activeImage?.includes(img) ? 'active imageContainer' : 'imageContainer'} key={i}>
-                                    <img src={Checkmark} className='checkmark' alt='profile' />
+                                    {/* <img src={Checkmark} className='checkmark' alt='profile' /> */}
                                     <img src={img} className='profilePic' alt='profile' />
                                     <div className='buttonContainer'>
                                         <button className='acceptButton' onClick={() => getCurrentImage(img)}>Accept</button>
